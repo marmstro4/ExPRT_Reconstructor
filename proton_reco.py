@@ -99,7 +99,7 @@ def get_hits(line, numbers, simresx, simresy, simresz):
 
     return points, hit
 
-def FitGroupsAdv(points, target_thickness, target_radius):
+def FitGroupsAdv(points, target_thickness, beam_spot):
     # -------------------------------------------------
     # Convert points
     # -------------------------------------------------
@@ -270,9 +270,6 @@ def FitGroupsAdv(points, target_thickness, target_radius):
         # Beam spot likelihood
         # ---------------------------------------------
 
-        beam_sigma = target_radius/2.0
-
-
         r2 = (
             vertex[0]**2 +
             vertex[1]**2
@@ -284,7 +281,7 @@ def FitGroupsAdv(points, target_thickness, target_radius):
         # chi2 = r^2/sigma^2
 
         beam_penalty = np.sqrt(
-            r2/(beam_sigma**2)
+            r2/(beam_spot**2)
         )
 
 

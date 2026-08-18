@@ -89,15 +89,13 @@ def format_time(seconds):
     return f"{hours}h {mins}m"
 
 
-def run_application():
+def run_application(nthreads):
 
     evt_num = utilities.line_count(ExPRT_hits)
 
     numbers = utilities.extract_numbers(ExPRT_hits)
 
     indices = list(range(min(evt_num, len(numbers))))
-
-    nthreads = 20
 
     chunks = np.array_split(indices, nthreads)
 
@@ -234,21 +232,23 @@ if __name__ == "__main__":
         print("Usage: python3 main.py <file_prefix>")
         sys.exit(1)
 
-    file_prefix = sys.argv[1]
-
-    ExPRT_hits = f"{file_prefix}_hits.csv"
+    ExPRT_hits = sys.argv[1]
 
     print("Using hit file:", ExPRT_hits)
-
     print("verticies are obtained in 'vertex' object:")
     print("formatting: evt,x,y,z")
 
-    target_thickness = 50
-    beam_spot = 1
+    target_thickness = 50 # LH2 full length [mm]
+    beam_spot = 1 #sigma [mm]
 
     # Add Gaussian smear to position resolutions (sigma)
     simresx = 0.0
     simresy = 0.0
     simresz = 0.0
 
-    vertex = run_application()
+    nthreads = 4
+
+    vertex = run_application(nthreads)
+
+    #For example, print all verticies
+    print(vertex)
