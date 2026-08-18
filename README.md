@@ -1,5 +1,5 @@
-#Blame: Michael Armstrong
-#Contact: marmstro@lbl.gov
+#Blame: Michael Armstrong  
+#Contact: marmstro@lbl.gov  
 
 
 This is a python code that fits pairs of straight lines through proton tracks recorded as up to 4 hits in the ExPRT tracker to obtain reaction verticies.
@@ -7,20 +7,20 @@ This is a python code that fits pairs of straight lines through proton tracks re
 The reconstruction algorithm studies the residual between an extrapolation of simulatenously fitted lines to the z axis with a Gaussian penality in the transverse plane depending on the beam profile.
 
 #Pre-requisites
-python3 and the following modules: (most of which usually come preinstalled)
-math
-numpy
-scipy.optimize
-matplotlib
-optimize
-sklearn
-itertools
-scipy.integrate
-mpl_toolkits
-csv
-sys
-multiprocessing as mp
-time
+python3 and the following modules: (most of which usually come preinstalled)  
+math  
+numpy  
+scipy.optimize  
+matplotlib  
+optimize  
+sklearn  
+itertools  
+scipy.integrate  
+mpl_toolkits  
+csv  
+sys  
+multiprocessing as mp  
+time  
 
 #Running
 
