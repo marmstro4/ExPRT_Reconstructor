@@ -27,14 +27,16 @@ time
 1. Input data is a .csv of the following format:
 event_id,hit1x,hit1y,hit1z,hit2x,hit2y,hit2z,hit3x,hit3y,hit3z,hit4x,hit4y,hit4z
 
-Then use the following command to run:
+Then use the following command to run:  
 python3 main.py input.csv
 
 2. This code is parrallelized, edit the main function parameter "nthreads" appropriately
 
 3. The beam_spot parameter provides as essential boundary limit for the reconstruction. Assuming a 2D Gaussian profile this is the x,y sigma in mm
 
-4. For analying simulations a Gaussian smear for hist is available in the simres parameters. Otherwise leave these 0.
+4. The target_thickness parameter helps the algorithm also, set this parameter in mm for your LH2 target thickness
+
+5. For analyzing simulations a Gaussian smear for hist is available in the simres parameters. Otherwise leave these 0.
 
 #Results
 
